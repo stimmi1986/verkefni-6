@@ -6,8 +6,8 @@
   "scripts": {
     "browser-sync": "browser-sync start --server --files index.html styles.css",
     "sass": "sass styles.scss styles.css -w",
-    "dev": "concurrently npm:sass npm:sass",
-    "lint": "stylelint styles.scss --syntax scss"
+    "lint": "stylelint styles.scss --syntax scss",
+    "dev": "concurrently \"npm run sass && npm run lint\" \"npm run browser-sync\" && open ./index.html"
   },
   "repository": {
     "type": "git",
